@@ -206,7 +206,7 @@ export default function About() {
                       <p style={{ fontFamily: "'Manrope'", fontSize: 16, lineHeight: 1.6, color: '#58423c', margin: 0 }}>Public speaking, running, the outdoors, and meeting curious people — the things that keep me energised beyond the workbench.</p>
                     </div>
                     <div className="flip-face" style={{ transform: 'rotateY(180deg)', background: '#fcf9f3', border: '1px solid rgba(94,110,69,.3)', boxShadow: '4px 4px 0 0 #1c1c18', padding: 20 }}>
-                      <img src="/images/about-interests.jpg" alt="Interests" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 14, boxShadow: '0 8px 20px rgba(0,0,0,.2)', display: 'block' }} />
+                      <img src="/images/about-interests.JPG" alt="Interests" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 14, boxShadow: '0 8px 20px rgba(0,0,0,.2)', display: 'block' }} />
                     </div>
                   </div>
                 </div>
