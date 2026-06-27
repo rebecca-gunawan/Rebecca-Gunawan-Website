@@ -106,7 +106,19 @@ export default function About() {
     <>
       <Head>
         <title>Rebecca Gunawan — Portfolio</title>
-        <meta name="description" content="Rebecca Gunawan — mechanical engineer and designer." />
+        <meta name="description" content="Mechanical engineer & designer. Moving parts, human-centred teams, and big-picture innovation." />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Rebecca Gunawan — Portfolio" />
+        <meta property="og:description" content="Mechanical engineer & designer. Moving parts, human-centred teams, and big-picture innovation." />
+        <meta property="og:url" content={`${process.env.NEXT_PUBLIC_SITE_URL || ''}`} />
+        <meta property="og:image" content={`${process.env.NEXT_PUBLIC_SITE_URL || ''}/api/og`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Rebecca Gunawan — Portfolio" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Rebecca Gunawan — Portfolio" />
+        <meta name="twitter:description" content="Mechanical engineer & designer. Moving parts, human-centred teams, and big-picture innovation." />
+        <meta name="twitter:image" content={`${process.env.NEXT_PUBLIC_SITE_URL || ''}/api/og`} />
       </Head>
 
       <div style={{ background: '#fcf9f3', color: '#1c1c18', fontFamily: "'Manrope',sans-serif" }}>

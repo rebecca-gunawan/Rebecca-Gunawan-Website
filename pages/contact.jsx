@@ -26,6 +26,18 @@ export default function Contact() {
       <Head>
         <title>Let's Chat — Rebecca Gunawan</title>
         <meta name="description" content="Get in touch with Rebecca Gunawan — mechanical engineer and designer." />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Let's Chat — Rebecca Gunawan" />
+        <meta property="og:description" content="Get in touch with Rebecca Gunawan — mechanical engineer and designer." />
+        <meta property="og:url" content={`${process.env.NEXT_PUBLIC_SITE_URL || ''}/contact`} />
+        <meta property="og:image" content={`${process.env.NEXT_PUBLIC_SITE_URL || ''}/api/og`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Rebecca Gunawan — Portfolio" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Let's Chat — Rebecca Gunawan" />
+        <meta name="twitter:description" content="Get in touch with Rebecca Gunawan — mechanical engineer and designer." />
+        <meta name="twitter:image" content={`${process.env.NEXT_PUBLIC_SITE_URL || ''}/api/og`} />
       </Head>
 
       <div style={{ background: '#fcf9f3', color: '#1c1c18', fontFamily: "'Manrope',sans-serif" }}>
