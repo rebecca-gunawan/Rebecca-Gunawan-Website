@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;700;800&amp;family=Manrope:wght@400;500;700&amp;family=Space+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0..1,0&amp;display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  html, body { margin:0; padding:0; }
+  body { background:#fcf9f3; color:#1c1c18; font-family:'Manrope',sans-serif; overflow-x:hidden; -webkit-font-smoothing:antialiased; }
+  ::selection { background:#c4e9ef; color:#001f23; }
+  .ms { font-family:'Material Symbols Outlined'; font-weight:normal; font-style:normal; line-height:1; display:inline-block; }
+  @keyframes floaty { 0%,100% { transform:translateY(0) rotate(-4deg);} 50% { transform:translateY(-16px) rotate(6deg);} }
+  @keyframes floaty2 { 0%,100% { transform:translateY(0) rotate(8deg);} 50% { transform:translateY(-22px) rotate(-4deg);} }
+  @keyframes twinkle { 0%,100% { opacity:.35; transform:scale(.85);} 50% { opacity:.9; transform:scale(1.1);} }
+  image-slot { display:block; }
+  .navlink:hover { color:#3f6267 !important; }
+  .tiltcard { transition:transform .4s cubic-bezier(.175,.885,.32,1.275); }
+  .tiltcard:hover { transform:rotate(0deg) !important; }
+  .workcard:hover .workimg { transform:scale(1.02); }
+  .workcard:hover .workoverlay { opacity:1; }
+  .btn-press:active { transform:scale(.96); }
+  .lift:hover { transform:translateY(-4px); }
+  .chip { transition:transform .3s ease; }
+  .chip:hover { transform:translateY(-3px) rotate(0deg) !important; }
+  @keyframes marquee { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+  .marquee-track { display:flex; gap:20px; width:max-content; padding:10px 0 18px; animation:marquee 70s linear infinite; }
+  .marquee-mask:hover .marquee-track { animation-play-state:paused; }
+  .flipcard { perspective:1200px; }
+  .flip-inner { position:relative; width:100%; height:100%; transition:transform .65s cubic-bezier(.2,.7,.2,1); transform-style:preserve-3d; }
+  .flipcard:hover .flip-inner { transform:rotateY(180deg); }
+  .flip-face { position:absolute; inset:0; backface-visibility:hidden; -webkit-backface-visibility:hidden; border-radius:20px; box-sizing:border-box; }
+  body, html { cursor: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='34'%20height='34'%20viewBox='0%200%2034%2034'%3E%3Cpath%20d='M5%203%20L5%2025%20L11%2019%20L15%2027%20L19%2025%20L15%2017%20L23%2017%20Z'%20fill='%2387466b'%20stroke='%23ffffff'%20stroke-width='1.6'%20stroke-linejoin='round'/%3E%3C/svg%3E") 5 3, auto; }
+  a, button, .projrow, .contactrow, .flipcard, .chip { cursor: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='34'%20height='34'%20viewBox='0%200%2034%2034'%3E%3Cpath%20d='M5%203%20L5%2025%20L11%2019%20L15%2027%20L19%2025%20L15%2017%20L23%2017%20Z'%20fill='%2387466b'%20stroke='%23ffffff'%20stroke-width='1.6'%20stroke-linejoin='round'/%3E%3C/svg%3E") 5 3, pointer !important; }
+  input, textarea { cursor: text !important; }
+</style>
+</helmet>
+
+<div style="background:#fcf9f3; color:#1c1c18; font-family:'Manrope',sans-serif;">
+
+  <!-- ===== NAV ===== -->
+  <header style="position:sticky; top:0; z-index:50; background:rgba(252,249,243,.82); backdrop-filter:blur(12px); border-bottom:1px solid rgba(223,192,183,.4);">
+    <nav style="display:flex; justify-content:space-between; align-items:center; max-width:1280px; margin:0 auto; padding:20px 80px;">
+      <a href="About.dc.html" style="font-family:'Bricolage Grotesque'; font-weight:800; font-size:28px; letter-spacing:-.02em; color:#3f6267; text-decoration:none; display:inline-block;">Rebecca Gunawan</a>
+      <div style="display:flex; align-items:center; gap:40px;">
+        <a href="About.dc.html" class="navlink" style="font-family:'Manrope'; font-size:14px; text-transform:uppercase; letter-spacing:.06em; font-weight:700; color:#3f6267; text-decoration:none; border-bottom:2px solid #3f6267; padding-bottom:2px;">About</a>
+        <a href="Portfolio.dc.html" class="navlink" style="font-family:'Manrope'; font-size:14px; text-transform:uppercase; letter-spacing:.06em; font-weight:700; color:#58423c; text-decoration:none;">Projects</a>
+        <a href="LetsChat.dc.html" class="btn-press" style="background:#3f6267; color:#fff; font-family:'Space Mono'; font-size:12px; padding:12px 24px; border-radius:9999px; text-transform:uppercase; letter-spacing:.12em; box-shadow:4px 4px 0 0 #1c1c18; text-decoration:none; transition:transform .15s ease;">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main style="background-image:radial-gradient(circle,#dfc0b7 1px,transparent 1px); background-size:40px 40px;">
+
+    <!-- ===== HERO ===== -->
+    <section id="about-hero" onMouseMove="{{ onMove }}" style="position:relative; padding:120px 80px 140px; min-height:78vh; box-sizing:border-box;">
+      <span class="ms" style="position:absolute; top:90px; left:80px; color:#a8cdd3; font-size:42px; font-variation-settings:'FILL' 1; animation:floaty 7s ease-in-out infinite; z-index:1;">star</span>
+      <span class="ms" style="position:absolute; bottom:170px; right:180px; color:#5e6e45; font-size:30px; font-variation-settings:'FILL' 1; animation:floaty2 9s ease-in-out infinite; z-index:1;">auto_awesome</span>
+
+      <!-- full-page photo layer -->
+      <sc-for list="{{ gallery }}" as="ph" hint-placeholder-count="8">
+        <div style="position:absolute; width:104px; height:128px; z-index:2; transition:opacity .55s ease, transform .55s ease; {{ ph.wrapStyle }}">
+          <image-slot id="{{ ph.id }}" style="width:100%; height:100%; background:rgba(255,255,255,.8); border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,.2);" radius="10" mask="inset(0 round 10px)" placeholder=" "></image-slot>
+        </div>
+      </sc-for>
+
+      <!-- centered text -->
+      <div style="position:relative; z-index:5; max-width:780px; margin:0 auto; text-align:center; pointer-events:none;">
+        <h1 style="font-family:'Bricolage Grotesque'; font-weight:800; font-size:84px; line-height:1.04; letter-spacing:-.04em; margin:0;">Hi, I'm Rebecca.</h1>
+        <p style="font-family:'Bricolage Grotesque'; font-weight:500; font-size:30px; line-height:1.35; letter-spacing:-.01em; color:#58423c; margin:28px auto 40px; max-width:660px;">I design <span style="color:#3f6267; font-style:italic; font-weight:700;">moving parts</span>, foster thriving <span style="color:#3f6267; font-style:italic; font-weight:700;">human-centred teams</span>, and tackle big problems with <span style="color:#3f6267; font-style:italic; font-weight:700;">innovation</span>.</p>
+        <a href="Portfolio.dc.html" class="lift" style="pointer-events:auto; display:inline-block; color:#fff; padding:18px 36px; border-radius:9999px; font-family:'Space Mono'; font-size:13px; text-transform:uppercase; letter-spacing:.12em; box-shadow:4px 4px 0 0 #1c1c18; text-decoration:none; transition:transform .3s ease; background-color:#3f6267;">See My Work</a>
+        <sc-if value="{{ idle }}" hint-placeholder-val="{{ true }}">
+          <p style="font-family:'Space Mono'; font-size:12px; text-transform:uppercase; letter-spacing:.14em; color:#8b716a; margin:48px 0 0;">✦ move your cursor anywhere to reveal my world ✦</p>
+        </sc-if>
+      </div>
+    </section>
+
+    <!-- ===== PHILOSOPHY ===== -->
+    <section id="philosophy" style="padding:120px 80px 56px; background:#f6f3ed;">
+      <div style="max-width:1120px; margin:0 auto;">
+        <div style="margin-bottom:80px;">
+          <div>
+            <h2 style="font-family:'Bricolage Grotesque'; font-weight:700; font-size:48px; line-height:1.2; margin:0;">About Me</h2>
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:48px; align-items:start;">
+
+          <!-- Studies -->
+          <div class="flipcard" style="height:380px; transform:rotate(-2deg);">
+            <div class="flip-inner">
+              <div class="flip-face" style="background:#fcf9f3; padding:40px; border:1px solid rgba(223,192,183,.6); box-shadow:4px 4px 0 0 #1c1c18; display:flex; flex-direction:column; gap:24px;">
+                <div style="width:48px; height:48px; background:#a8cdd3; border-radius:9999px; display:flex; align-items:center; justify-content:center;"><span class="ms" style="color:#3f6267; font-size:24px;">school</span></div>
+                <h3 style="font-family:'Bricolage Grotesque'; font-weight:700; font-size:26px; margin:0;">Studies</h3>
+                <p style="font-family:'Manrope'; font-size:16px; line-height:1.6; color:#58423c; margin:0;">Bachelor of Mechanical Engineering (Honours). Always tinkering, always learning something new on the side.</p>
+              </div>
+              <div class="flip-face" style="transform:rotateY(180deg); background:#fcf9f3; border:1px solid rgba(223,192,183,.6); box-shadow:4px 4px 0 0 #1c1c18; padding:20px;">
+                <div style="position:relative; width:100%; height:100%; border-radius:14px; overflow:hidden; box-shadow:0 8px 20px rgba(0,0,0,.2);"><image-slot id="about-studies-3" style="width:100%; height:100%;" mask="inset(0 round 14px)" placeholder="Drop a photo"></image-slot></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interests -->
+          <div class="flipcard" style="height:380px; margin-top:32px; transform:rotate(1.5deg);">
+            <div class="flip-inner">
+              <div class="flip-face" style="background:rgba(204,214,173,.4); padding:40px; border:1px solid rgba(94,110,69,.3); box-shadow:4px 4px 0 0 #1c1c18; display:flex; flex-direction:column; gap:24px;">
+                <div style="width:48px; height:48px; background:#ccd6ad; border-radius:9999px; display:flex; align-items:center; justify-content:center;"><span class="ms" style="color:#5e6e45; font-size:24px;">interests</span></div>
+                <h3 style="font-family:'Bricolage Grotesque'; font-weight:700; font-size:26px; margin:0;">Interests</h3>
+                <p style="font-family:'Manrope'; font-size:16px; line-height:1.6; color:#58423c; margin:0;">Public speaking, running, the outdoors, and meeting curious people — the things that keep me energised beyond the workbench.</p>
+              </div>
+              <div class="flip-face" style="transform:rotateY(180deg); background:#fcf9f3; border:1px solid rgba(94,110,69,.3); box-shadow:4px 4px 0 0 #1c1c18; padding:20px;">
+                <div style="position:relative; width:100%; height:100%; border-radius:14px; overflow:hidden; box-shadow:0 8px 20px rgba(0,0,0,.2);"><image-slot id="about-interests-3" style="width:100%; height:100%;" mask="inset(0 round 14px)" placeholder="Drop a photo"></image-slot></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hobbies -->
+          <div class="flipcard" style="height:380px; margin-top:8px; transform:rotate(2deg);">
+            <div class="flip-inner">
+              <div class="flip-face" style="background:#fcf9f3; padding:40px; border:1px solid rgba(223,192,183,.6); box-shadow:4px 4px 0 0 #1c1c18; display:flex; flex-direction:column; gap:24px;">
+                <div style="width:48px; height:48px; background:#ffaed8; border-radius:9999px; display:flex; align-items:center; justify-content:center;"><span class="ms" style="color:#87466b; font-size:24px;">palette</span></div>
+                <h3 style="font-family:'Bricolage Grotesque'; font-weight:700; font-size:26px; margin:0;">Hobbies</h3>
+                <p style="font-family:'Manrope'; font-size:16px; line-height:1.6; color:#58423c; margin:0;">Knitting, sewing, reading, and making things by hand — slow, tactile creativity that balances out all the engineering.</p>
+              </div>
+              <div class="flip-face" style="transform:rotateY(180deg); background:#fcf9f3; border:1px solid rgba(223,192,183,.6); box-shadow:4px 4px 0 0 #1c1c18; padding:20px;">
+                <div style="position:relative; width:100%; height:100%; border-radius:14px; overflow:hidden; box-shadow:0 8px 20px rgba(0,0,0,.2);"><image-slot id="about-hobbies-3" style="width:100%; height:100%;" mask="inset(0 round 14px)" placeholder="Drop a photo"></image-slot></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SKILLS MARQUEE ===== -->
+    <section style="padding:0 0 140px; overflow:hidden; background:#f6f3ed;">
+      <div class="marquee-mask" style="overflow:hidden; -webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent); mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);">
+        <div class="marquee-track" ref="{{ marqueeRef }}">
+          <span class="chip" style="flex-shrink:0; padding:16px 28px; background:#a8cdd3; border:1px solid #3f6267; border-radius:9999px; box-shadow:4px 4px 0 0 #1c1c18; font-family:'Space Mono'; font-size:13px; text-transform:uppercase; white-space:nowrap;">CAD</span>
+          <span class="chip" style="flex-shrink:0; padding:16px 28px; background:#fcf9f3; border:1px solid #8b716a; border-radius:9999px; box-shadow:4px 4px 0 0 #1c1c18; font-family:'Space Mono'; font-size:13px; text-transform:uppercase; white-space:nowrap;">Product Design</span>
+          <span class="chip" style="flex-shrink:0; padding:16px 28px; background:#ccd6ad; border:1px solid #5e6e45; border-radius:9999px; box-shadow:4px 4px 0 0 #1c1c18; font-family:'Space Mono'; font-size:13px; text-transform:uppercase; white-space:nowrap;">Project Documentation</span>
+          <span class="chip" style="flex-shrink:0; padding:16px 28px; background:#ffd8e9; border:1px solid #87466b; border-radius:9999px; box-shadow:4px 4px 0 0 #1c1c18; font-family:'Space Mono'; font-size:13px; text-transform:uppercase; white-space:nowrap;">Electronics</span>
+          <span class="chip" style="flex-shrink:0; padding:16px 28px; background:#fcf9f3; border:1px solid #8b716a; border-radius:9999px; box-shadow:4px 4px 0 0 #1c1c18; font-family:'Space Mono'; font-size:13px; text-transform:uppercase; white-space:nowrap;">C</span>
+          <span class="chip" style="flex-shrink:0; padding:16px 28px; background:#a8cdd3; border:1px solid #3f6267; border-radius:9999px; box-shadow:4px 4px 0 0 #1c1c18; font-family:'Space Mono'; font-size:13px; text-transform:uppercase; white-space:nowrap;">MATLAB</span>
+          <span class="chip" style="flex-shrink:0; padding:16px 28px; background:#ccd6ad; border:1px solid #5e6e45; border-radius:9999px; box-shadow:4px 4px 0 0 #1c1c18; font-family:'Space Mono'; font-size:13px; text-transform:uppercase; white-space:nowrap;">Problem Solving</span>
+          <span class="chip" style="flex-shrink:0; padding:16px 28px; background:#ffd8e9; border:1px solid #87466b; border-radius:9999px; box-shadow:4px 4px 0 0 #1c1c18; font-family:'Space Mono'; font-size:13px; text-transform:uppercase; white-space:nowrap;">Prototyping</span>
+          <span class="chip" style="flex-shrink:0; padding:16px 28px; background:#a8cdd3; border:1px solid #3f6267; border-radius:9999px; box-shadow:4px 4px 0 0 #1c1c18; font-family:'Space Mono'; font-size:13px; text-transform:uppercase; white-space:nowrap;">Innovation</span>
+          <span class="chip" aria-hidden="true" style="flex-shrink:0; padding:16px 28px; background:#a8cdd3; border:1px solid #3f6267; border-radius:9999px; box-shadow:4px 4px 0 0 #1c1c18; font-family:'Space Mono'; font-size:13px; text-transform:uppercase; white-space:nowrap;">CAD</span>
+          <span class="chip" aria-hidden="true" style="flex-shrink:0; padding:16px 28px; background:#fcf9f3; border:1px solid #8b716a; border-radius:9999px; box-shadow:4px 4px 0 0 #1c1c18; font-family:'Space Mono'; font-size:13px; text-transform:uppercase; white-space:nowrap;">Product Design</span>
+          <span class="chip" aria-hidden="true" style="flex-shrink:0; padding:16px 28px; background:#ccd6ad; border:1px solid #5e6e45; border-radius:9999px; box-shadow:4px 4px 0 0 #1c1c18; font-family:'Space Mono'; font-size:13px; text-transform:uppercase; white-space:nowrap;">Project Documentation</span>
+          <span class="chip" aria-hidden="true" style="flex-shrink:0; padding:16px 28px; background:#ffd8e9; border:1px solid #87466b; border-radius:9999px; box-shadow:4px 4px 0 0 #1c1c18; font-family:'Space Mono'; font-size:13px; text-transform:uppercase; white-space:nowrap;">Electronics</span>
+          <span class="chip" aria-hidden="true" style="flex-shrink:0; padding:16px 28px; background:#fcf9f3; border:1px solid #8b716a; border-radius:9999px; box-shadow:4px 4px 0 0 #1c1c18; font-family:'Space Mono'; font-size:13px; text-transform:uppercase; white-space:nowrap;">C</span>
+          <span class="chip" aria-hidden="true" style="flex-shrink:0; padding:16px 28px; background:#a8cdd3; border:1px solid #3f6267; border-radius:9999px; box-shadow:4px 4px 0 0 #1c1c18; font-family:'Space Mono'; font-size:13px; text-transform:uppercase; white-space:nowrap;">MATLAB</span>
+          <span class="chip" aria-hidden="true" style="flex-shrink:0; padding:16px 28px; background:#ccd6ad; border:1px solid #5e6e45; border-radius:9999px; box-shadow:4px 4px 0 0 #1c1c18; font-family:'Space Mono'; font-size:13px; text-transform:uppercase; white-space:nowrap;">Problem Solving</span>
+          <span class="chip" aria-hidden="true" style="flex-shrink:0; padding:16px 28px; background:#ffd8e9; border:1px solid #87466b; border-radius:9999px; box-shadow:4px 4px 0 0 #1c1c18; font-family:'Space Mono'; font-size:13px; text-transform:uppercase; white-space:nowrap;">Prototyping</span>
+          <span class="chip" aria-hidden="true" style="flex-shrink:0; padding:16px 28px; background:#a8cdd3; border:1px solid #3f6267; border-radius:9999px; box-shadow:4px 4px 0 0 #1c1c18; font-family:'Space Mono'; font-size:13px; text-transform:uppercase; white-space:nowrap;">Innovation</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section style="padding:120px 80px 140px; text-align:center;">
+      <h2 style="font-family:'Bricolage Grotesque'; font-weight:800; font-size:44px; letter-spacing:-.03em; margin:0 0 20px;">Have a look at <span style="color:#3f6267; font-style:italic;">cool things</span> I've built.</h2>
+      <p style="font-family:'Manrope'; font-size:18px; line-height:1.6; color:#58423c; max-width:520px; margin:0 auto 32px;">A mix of robotics, mechanical design, and hands-on engineering. Take a look through what I've been building.</p>
+      <a href="Portfolio.dc.html" class="lift" style="display:inline-block; background:#3f6267; color:#fff; padding:20px 48px; border-radius:9999px; font-family:'Space Mono'; font-size:14px; text-transform:uppercase; letter-spacing:.12em; box-shadow:4px 4px 0 0 #1c1c18; text-decoration:none; transition:transform .3s ease;">View Projects</a>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer style="background:#f0eee8; border-top:1px solid rgba(223,192,183,.4);">
+    <div style="display:flex; justify-content:space-between; align-items:center; max-width:1280px; margin:0 auto; padding:32px 80px; gap:32px;">
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        <p style="font-family:'Manrope'; font-size:16px; color:#3f6267; margin:0;">© 2026 Rebecca Gunawan.</p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:32px; align-items:flex-end;">
+        <div style="display:flex; flex-wrap:wrap; justify-content:flex-end; gap:32px;">
+          <a href="About.dc.html" style="font-family:'Manrope'; font-size:16px; color:#3f6267; text-decoration:underline; text-underline-offset:4px;">About</a>
+          <a href="Portfolio.dc.html" style="font-family:'Manrope'; font-size:16px; color:#3f6267; text-decoration:underline; text-underline-offset:4px;">Projects</a>
+          <a href="LetsChat.dc.html" style="font-family:'Manrope'; font-size:16px; color:#3f6267; text-decoration:underline; text-underline-offset:4px;">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;100%&quot;},&quot;photoHoldSeconds&quot;:{&quot;editor&quot;:&quot;float&quot;,&quot;default&quot;:1.2,&quot;min&quot;:0.4,&quot;max&quot;:6,&quot;step&quot;:0.1,&quot;tsType&quot;:&quot;number&quot;},&quot;trailSpacing&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:54,&quot;min&quot;:20,&quot;max&quot;:120,&quot;step&quot;:2,&quot;tsType&quot;:&quot;number&quot;},&quot;marqueeSeconds&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:70,&quot;min&quot;:20,&quot;max&quot;:140,&quot;step&quot;:5,&quot;tsType&quot;:&quot;number&quot;}}">
+class Component extends DCLogic {
+  N = 40;
+  idx = 0;
+  last = null;
+  xs = new Array(40).fill(-9999);
+  ys = new Array(40).fill(-9999);
+  on = new Array(40).fill(false);
+  timers = {};
+  marqueeRef = React.createRef();
+  // a new photo drops only after the cursor has travelled this far — creates the trail spacing
+  onMove = (e) => {
+    const r = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - r.left, y = e.clientY - r.top;
+    const gap = this.props.trailSpacing ?? 46;
+    if (this.last) {
+      const dx = x - this.last.x, dy = y - this.last.y;
+      if (dx * dx + dy * dy < gap * gap) return;
+    }
+    this.last = { x, y };
+    const i = this.idx;
+    this.idx = (this.idx + 1) % this.N;          // loop through all 40 photos
+    this.xs[i] = x; this.ys[i] = y; this.on[i] = true;
+    if (this.timers[i]) clearTimeout(this.timers[i]);
+    const hold = (this.props.photoHoldSeconds ?? 1.5) * 1000;
+    this.timers[i] = setTimeout(() => { this.on[i] = false; this.forceUpdate(); }, hold);
+    this.forceUpdate();
+  };
+  syncMarquee() { if (this.marqueeRef.current) this.marqueeRef.current.style.animationDuration = (this.props.marqueeSeconds ?? 70) + 's'; }
+
+  // math + robotics icon trail across the page (hero keeps its own photo trail; pauses over links/buttons)
+  MATHS = ['\u2211','\u03c0','\u221a','\u222b','\u00d7','\u00f7','\u221e','\u03b8','\u0394','\u00b5','f(x)','\u2248'];
+  ROBOTS = ['smart_toy','precision_manufacturing','memory','bolt','settings_suggest','build','rocket_launch','cable'];
+  COLORS = ['#3f6267','#87466b','#5e6e45','#a45e85'];
+  iconLast = null;
+  startIconTrail() {
+    this.layer = document.createElement('div');
+    this.layer.style.cssText = 'position:fixed; inset:0; pointer-events:none; z-index:60; overflow:hidden;';
+    document.body.appendChild(this.layer);
+    this.onIconTrail = (e) => {
+      // no trail in the hero (it has the photo trail) or when over a link/button to another page
+      if (e.target.closest && e.target.closest('#about-hero, a, button')) { this.iconLast = null; return; }
+      if (this.iconLast) {
+        const dx = e.clientX - this.iconLast.x, dy = e.clientY - this.iconLast.y;
+        if (dx * dx + dy * dy < 42 * 42) return;
+      }
+      this.iconLast = { x: e.clientX, y: e.clientY };
+      this.spawnIcon(e.clientX, e.clientY);
+    };
+    window.addEventListener('mousemove', this.onIconTrail, { passive: true });
+  }
+  spawnIcon(x, y) {
+    const robot = Math.random() < 0.45;
+    const el = document.createElement('span');
+    const color = this.COLORS[(Math.random() * this.COLORS.length) | 0];
+    const size = robot ? (22 + Math.random() * 12) : (20 + Math.random() * 16);
+    if (robot) {
+      el.textContent = this.ROBOTS[(Math.random() * this.ROBOTS.length) | 0];
+      el.style.fontFamily = "'Material Symbols Outlined'";
+    } else {
+      el.textContent = this.MATHS[(Math.random() * this.MATHS.length) | 0];
+      el.style.fontFamily = "'Space Mono', monospace";
+      el.style.fontWeight = '700';
+    }
+    el.style.cssText += 'position:absolute; left:' + x + 'px; top:' + y + 'px; color:' + color + '; font-size:' + size + 'px; transform:translate(-50%,-50%); will-change:transform,opacity; user-select:none;';
+    this.layer.appendChild(el);
+    const driftX = (Math.random() - 0.5) * 60;
+    const rot = (Math.random() - 0.5) * 80;
+    const anim = el.animate(
+      [
+        { transform: 'translate(-50%,-50%) scale(.4) rotate(0deg)', opacity: 0 },
+        { transform: 'translate(calc(-50% + ' + (driftX * 0.4) + 'px),-70%) scale(1) rotate(' + (rot * 0.4) + 'deg)', opacity: 1, offset: 0.18 },
+        { transform: 'translate(calc(-50% + ' + driftX + 'px),-150%) scale(.85) rotate(' + rot + 'deg)', opacity: 0 }
+      ],
+      { duration: 1100 + Math.random() * 500, easing: 'cubic-bezier(.2,.7,.3,1)' }
+    );
+    anim.onfinish = () => el.remove();
+  }
+  componentDidMount() { this.syncMarquee(); this.startIconTrail(); }
+  componentDidUpdate() { this.syncMarquee(); }
+  componentWillUnmount() { Object.values(this.timers).forEach(clearTimeout); window.removeEventListener('mousemove', this.onIconTrail); if (this.layer) this.layer.remove(); }
+  renderVals() {
+    return {
+      marqueeRef: this.marqueeRef,
+      idle: !this.on.some(Boolean),
+      onMove: this.onMove,
+      gallery: Array.from({ length: this.N }, (_, i) => {
+        const rot = Math.round(Math.sin(i * 3.3) * 10);
+        return {
+          id: 'about-ph-' + i,
+          wrapStyle: 'left:' + this.xs[i] + 'px; top:' + this.ys[i] + 'px; transform:translate(-50%,-50%) rotate(' + rot + 'deg); opacity:' + (this.on[i] ? 1 : 0) + ';'
+        };
+      })
+    };
+  }
+}
+</script>
+</body>
+</html>
