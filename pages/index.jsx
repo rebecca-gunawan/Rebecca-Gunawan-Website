@@ -1,4 +1,4 @@
-import { useRef, useEffect, useCallback, useReducer } from 'react';
+import { useRef, useEffect, useCallback, useReducer, useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Nav from '../components/Nav';
@@ -70,6 +70,10 @@ export default function About() {
     "/images/trail/5530962912_IMG_0508.JPG",
   ];
 
+  const [studiesFlipped, setStudiesFlipped] = useState(false);
+  const [interestsFlipped, setInterestsFlipped] = useState(false);
+  const [hobbiesFlipped, setHobbiesFlipped] = useState(false);
+
   const posRef = useRef(Array.from({ length: N }, () => ({ x: -9999, y: -9999, on: false })));
   const idxRef = useRef(0);
   const lastRef = useRef(null);
@@ -131,7 +135,6 @@ export default function About() {
             onMouseMove={handleMouseMove}
           >
             <span className="ms" style={{ position: 'absolute', top: 90, left: 80, color: '#a8cdd3', fontSize: 42, fontVariationSettings: "'FILL' 1", animation: 'floaty 7s ease-in-out infinite', zIndex: 1, pointerEvents: 'none' }}>star</span>
-            <span className="ms" style={{ position: 'absolute', bottom: 170, right: 180, color: '#5e6e45', fontSize: 30, fontVariationSettings: "'FILL' 1", animation: 'floaty2 9s ease-in-out infinite', zIndex: 1, pointerEvents: 'none' }}>auto_awesome</span>
 
             {/* Photo trail tiles */}
             {posRef.current.map((ph, i) => {
@@ -169,7 +172,7 @@ export default function About() {
               <Link
                 href="/projects"
                 className="lift"
-                style={{ pointerEvents: 'auto', display: 'inline-block', background: '#3f6267', color: '#fff', padding: '18px 36px', borderRadius: 9999, fontFamily: "'Space Mono'", fontSize: 13, textTransform: 'uppercase', letterSpacing: '.12em', boxShadow: '4px 4px 0 0 #1c1c18', textDecoration: 'none' }}
+                style={{ pointerEvents: 'auto', display: 'inline-block', marginTop: 48, background: '#3f6267', color: '#fff', padding: '18px 36px', borderRadius: 9999, fontFamily: "'Space Mono'", fontSize: 13, textTransform: 'uppercase', letterSpacing: '.12em', boxShadow: '4px 4px 0 0 #1c1c18', textDecoration: 'none' }}
               >
                 See My Work
               </Link>
@@ -189,7 +192,7 @@ export default function About() {
               <div className="flipcards-grid">
 
                 {/* Studies */}
-                <div className="flipcard" style={{ height: 380, transform: 'rotate(-2deg)' }}>
+                <div className={`flipcard${studiesFlipped ? ' flipped' : ''}`} style={{ height: 380, transform: 'rotate(-2deg)' }} onClick={() => setStudiesFlipped(f => !f)}>
                   <div className="flip-inner">
                     <div className="flip-face" style={{ background: '#fcf9f3', padding: 40, border: '1px solid rgba(223,192,183,.6)', boxShadow: '4px 4px 0 0 #1c1c18', display: 'flex', flexDirection: 'column', gap: 24 }}>
                       <div style={{ width: 48, height: 48, background: '#a8cdd3', borderRadius: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -205,7 +208,7 @@ export default function About() {
                 </div>
 
                 {/* Interests */}
-                <div className="flipcard flipcard-stagger-md" style={{ height: 380, transform: 'rotate(1.5deg)' }}>
+                <div className={`flipcard flipcard-stagger-md${interestsFlipped ? ' flipped' : ''}`} style={{ height: 380, transform: 'rotate(1.5deg)' }} onClick={() => setInterestsFlipped(f => !f)}>
                   <div className="flip-inner">
                     <div className="flip-face" style={{ background: 'rgba(204,214,173,.4)', padding: 40, border: '1px solid rgba(94,110,69,.3)', boxShadow: '4px 4px 0 0 #1c1c18', display: 'flex', flexDirection: 'column', gap: 24 }}>
                       <div style={{ width: 48, height: 48, background: '#ccd6ad', borderRadius: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -221,7 +224,7 @@ export default function About() {
                 </div>
 
                 {/* Hobbies */}
-                <div className="flipcard flipcard-stagger-sm" style={{ height: 380, transform: 'rotate(2deg)' }}>
+                <div className={`flipcard flipcard-stagger-sm${hobbiesFlipped ? ' flipped' : ''}`} style={{ height: 380, transform: 'rotate(2deg)' }} onClick={() => setHobbiesFlipped(f => !f)}>
                   <div className="flip-inner">
                     <div className="flip-face" style={{ background: '#fcf9f3', padding: 40, border: '1px solid rgba(223,192,183,.6)', boxShadow: '4px 4px 0 0 #1c1c18', display: 'flex', flexDirection: 'column', gap: 24 }}>
                       <div style={{ width: 48, height: 48, background: '#ffaed8', borderRadius: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>

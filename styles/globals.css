@@ -470,3 +470,28 @@ img {
   z-index: 1;
   -webkit-touch-callout: none;
 }
+
+/* ============================================================
+   MOBILE FLIP CARDS & CURSOR REMOVAL
+   ============================================================ */
+
+/* Click/tap to flip — works on all devices */
+.flipcard.flipped .flip-inner {
+  transform: rotateY(180deg);
+}
+
+/* Touch devices: disable the CSS hover-flip so it doesn't
+   conflict with the click-flip state */
+@media (hover: none) {
+  .flipcard:hover .flip-inner {
+    transform: rotateY(0deg);
+  }
+}
+
+/* Remove custom cursor on touch/mobile — cursor effects are
+   mouse-only and break on touch devices */
+@media (hover: none), (pointer: coarse) {
+  html, body { cursor: auto !important; }
+  a, button, .projrow, .contactrow, .flipcard, .chip { cursor: auto !important; }
+  input, textarea, select { cursor: auto !important; }
+}
