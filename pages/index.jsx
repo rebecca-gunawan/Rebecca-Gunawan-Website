@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import IconTrail from '../components/IconTrail';
+import ProtectedImage from '../components/ProtectedImage';
 
 const N = 40;
 
@@ -153,7 +154,8 @@ export default function About() {
                     src={trailPhotos[i % trailPhotos.length]}
                     alt=""
                     aria-hidden="true"
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 10, boxShadow: '0 6px 18px rgba(0,0,0,.18)', display: 'block' }}
+                    draggable="false"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 10, boxShadow: '0 6px 18px rgba(0,0,0,.18)', display: 'block', pointerEvents: 'none' }}
                   />
                 </div>
               );
@@ -200,7 +202,7 @@ export default function About() {
                       <p style={{ fontFamily: "'Manrope'", fontSize: 16, lineHeight: 1.6, color: '#58423c', margin: 0 }}>Bachelor of Mechanical Engineering (Honours). Always tinkering, always learning something new on the side.</p>
                     </div>
                     <div className="flip-face" style={{ transform: 'rotateY(180deg)', background: '#fcf9f3', border: '1px solid rgba(223,192,183,.6)', boxShadow: '4px 4px 0 0 #1c1c18', padding: 20 }}>
-                      <img src="/images/about-studies.jpg" alt="Studies" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 14, boxShadow: '0 8px 20px rgba(0,0,0,.2)', display: 'block' }} />
+                      <ProtectedImage src="/images/about-studies.jpg" alt="Studies" style={{ objectFit: 'cover', borderRadius: 14, boxShadow: '0 8px 20px rgba(0,0,0,.2)' }} />
                     </div>
                   </div>
                 </div>
@@ -216,7 +218,7 @@ export default function About() {
                       <p style={{ fontFamily: "'Manrope'", fontSize: 16, lineHeight: 1.6, color: '#58423c', margin: 0 }}>Public speaking, running, the outdoors, and meeting curious people — the things that keep me energised beyond the workbench.</p>
                     </div>
                     <div className="flip-face" style={{ transform: 'rotateY(180deg)', background: '#fcf9f3', border: '1px solid rgba(94,110,69,.3)', boxShadow: '4px 4px 0 0 #1c1c18', padding: 20 }}>
-                      <img src="/images/about-interests.JPG" alt="Interests" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 14, boxShadow: '0 8px 20px rgba(0,0,0,.2)', display: 'block' }} />
+                      <ProtectedImage src="/images/about-interests.JPG" alt="Interests" style={{ objectFit: 'cover', borderRadius: 14, boxShadow: '0 8px 20px rgba(0,0,0,.2)' }} />
                     </div>
                   </div>
                 </div>
@@ -232,7 +234,7 @@ export default function About() {
                       <p style={{ fontFamily: "'Manrope'", fontSize: 16, lineHeight: 1.6, color: '#58423c', margin: 0 }}>Knitting, sewing, reading, and making things by hand — slow, tactile creativity that balances out all the engineering.</p>
                     </div>
                     <div className="flip-face" style={{ transform: 'rotateY(180deg)', background: '#fcf9f3', border: '1px solid rgba(223,192,183,.6)', boxShadow: '4px 4px 0 0 #1c1c18', padding: 20 }}>
-                      <img src="/images/about-hobbies.jpg" alt="Hobbies" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 14, boxShadow: '0 8px 20px rgba(0,0,0,.2)', display: 'block' }} />
+                      <ProtectedImage src="/images/about-hobbies.jpg" alt="Hobbies" style={{ objectFit: 'cover', borderRadius: 14, boxShadow: '0 8px 20px rgba(0,0,0,.2)' }} />
                     </div>
                   </div>
                 </div>

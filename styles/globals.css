@@ -439,3 +439,34 @@ input, textarea, select { cursor: text !important; }
   .footer-inner { flex-direction: column; text-align: center; }
   .flipcards-grid { gap: 16px; }
 }
+
+/* ============================================================
+   IMAGE PROTECTION
+   ============================================================ */
+
+/* Block drag on every image site-wide */
+img {
+  -webkit-user-drag: none;
+  user-drag: none;
+}
+
+/* Protected image wrapper — overlay intercepts right-click so the
+   browser context menu never shows "Save Image As" */
+.img-protect-wrap {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.img-protect-wrap img {
+  -webkit-touch-callout: none; /* iOS long-press callout */
+  user-select: none;
+  pointer-events: none;        /* overlay captures mouse/touch instead */
+}
+.img-protect-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  -webkit-touch-callout: none;
+}

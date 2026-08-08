@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import IconTrail from '../components/IconTrail';
+import ProtectedImage from '../components/ProtectedImage';
 
 const PROJECTS = [
   {
@@ -79,7 +80,7 @@ export default function Projects() {
                 style={{ background: '#f6f3ed', border: '1px solid #dfc0b7', borderRadius: 24, padding: 24, boxShadow: '4px 4px 0 0 #1c1c18' }}
               >
                 <div className="proj-img-col">
-                  <img src={proj.imgSrc} alt={proj.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                  <ProtectedImage src={proj.imgSrc} alt={proj.title} style={{ objectFit: 'cover' }} />
                 </div>
                 <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '8px 8px 8px 0' }}>
                   <span style={{ fontFamily: "'Space Mono'", fontSize: 12, textTransform: 'uppercase', letterSpacing: '.12em', color: '#5e6e45', marginBottom: 10 }}>{proj.genre}</span>
