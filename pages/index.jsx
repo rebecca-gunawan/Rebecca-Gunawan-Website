@@ -166,9 +166,6 @@ export default function About() {
               <h1 className="hero-heading">
                 Hi, I'm Rebecca.
               </h1>
-              <p className="hero-sub">
-                I design <span style={{ color: '#3f6267', fontStyle: 'italic', fontWeight: 700 }}>moving parts</span>, foster thriving <span style={{ color: '#3f6267', fontStyle: 'italic', fontWeight: 700 }}>human-centred teams</span>, and tackle big problems with <span style={{ color: '#3f6267', fontStyle: 'italic', fontWeight: 700 }}>innovation</span>.
-              </p>
               <Link
                 href="/projects"
                 className="lift"
@@ -199,7 +196,7 @@ export default function About() {
                         <span className="ms" style={{ color: '#3f6267', fontSize: 24 }}>school</span>
                       </div>
                       <h3 style={{ fontFamily: "'Bricolage Grotesque'", fontWeight: 700, fontSize: 26, margin: 0 }}>Studies</h3>
-                      <p style={{ fontFamily: "'Manrope'", fontSize: 16, lineHeight: 1.6, color: '#58423c', margin: 0 }}>Bachelor of Mechanical Engineering (Honours). Always tinkering, always learning something new on the side.</p>
+                      <p style={{ fontFamily: "'Manrope'", fontSize: 16, lineHeight: 1.6, color: '#58423c', margin: 0 }}>Bachelor of Mechanical Engineering (Honours) at the University of Auckland. Passionate about engineering design, manufacturing and innovation.</p>
                     </div>
                     <div className="flip-face" style={{ transform: 'rotateY(180deg)', background: '#fcf9f3', border: '1px solid rgba(223,192,183,.6)', boxShadow: '4px 4px 0 0 #1c1c18', padding: 20 }}>
                       <ProtectedImage src="/images/about-studies.jpg" alt="Studies" style={{ objectFit: 'cover', borderRadius: 14, boxShadow: '0 8px 20px rgba(0,0,0,.2)' }} />
@@ -215,7 +212,7 @@ export default function About() {
                         <span className="ms" style={{ color: '#5e6e45', fontSize: 24 }}>interests</span>
                       </div>
                       <h3 style={{ fontFamily: "'Bricolage Grotesque'", fontWeight: 700, fontSize: 26, margin: 0 }}>Interests</h3>
-                      <p style={{ fontFamily: "'Manrope'", fontSize: 16, lineHeight: 1.6, color: '#58423c', margin: 0 }}>Public speaking, running, the outdoors, and meeting curious people — the things that keep me energised beyond the workbench.</p>
+                      <p style={{ fontFamily: "'Manrope'", fontSize: 16, lineHeight: 1.6, color: '#58423c', margin: 0 }}>Running, swimming, and being outdoors! I'd go to run clubs or cafe hopping anytime.</p>
                     </div>
                     <div className="flip-face" style={{ transform: 'rotateY(180deg)', background: '#fcf9f3', border: '1px solid rgba(94,110,69,.3)', boxShadow: '4px 4px 0 0 #1c1c18', padding: 20 }}>
                       <ProtectedImage src="/images/about-interests.JPG" alt="Interests" style={{ objectFit: 'cover', borderRadius: 14, boxShadow: '0 8px 20px rgba(0,0,0,.2)' }} />
@@ -231,7 +228,7 @@ export default function About() {
                         <span className="ms" style={{ color: '#87466b', fontSize: 24 }}>palette</span>
                       </div>
                       <h3 style={{ fontFamily: "'Bricolage Grotesque'", fontWeight: 700, fontSize: 26, margin: 0 }}>Hobbies</h3>
-                      <p style={{ fontFamily: "'Manrope'", fontSize: 16, lineHeight: 1.6, color: '#58423c', margin: 0 }}>Knitting, sewing, reading, and making things by hand — slow, tactile creativity that balances out all the engineering.</p>
+                      <p style={{ fontFamily: "'Manrope'", fontSize: 16, lineHeight: 1.6, color: '#58423c', margin: 0 }}>Board games, knitting, sewing, reading, or crocheting!</p>
                     </div>
                     <div className="flip-face" style={{ transform: 'rotateY(180deg)', background: '#fcf9f3', border: '1px solid rgba(223,192,183,.6)', boxShadow: '4px 4px 0 0 #1c1c18', padding: 20 }}>
                       <ProtectedImage src="/images/about-hobbies.jpg" alt="Hobbies" style={{ objectFit: 'cover', borderRadius: 14, boxShadow: '0 8px 20px rgba(0,0,0,.2)' }} />
@@ -278,9 +275,6 @@ export default function About() {
             <h2 className="cta-heading">
               Have a look at <span style={{ color: '#3f6267', fontStyle: 'italic' }}>cool things</span> I've built.
             </h2>
-            <p className="cta-sub">
-              A mix of robotics, mechanical design, and hands-on engineering. Take a look through what I've been building.
-            </p>
             <Link
               href="/projects"
               className="lift"
