@@ -8,21 +8,33 @@ import ProtectedImage from '../components/ProtectedImage';
 const PROJECTS = [
   {
     genre: 'Robotics & Automation',
-    title: 'Warman Competition',
-    description: 'Designed and built a complete mechatronic system from scratch for autonomous payload retrieval, transport, and precision drop-off; engineered the full mechanism from a blank slate through iterative CAD prototyping and design–build–test cycles to optimise reliability and cycle time.',
-    imgSrc: '/images/project-warman.png',
-  },
-  {
-    genre: 'Robotics & Automation',
-    title: 'VEX Robot Autonomous Navigation',
-    description: 'Programmed an autonomous payload-retrieval and line-following robot in C with optical sensor feedback for real-time path correction; P and PI control loops to minimise steady-state error and improve trajectory tracking.',
+    title: 'VEX Autonomous Robot',
+    description: 'Programmed a robot to retrieve a payload and follow a line course autonomously, correcting its own path in real time from optical sensor feedback. Implemented P and PI control loops in C, tuning gains across repeated runs to smooth trajectory tracking and remove steady-state error.',
     imgSrc: '/images/project-vex.png',
   },
   {
+    genre: 'Robotics & Automation',
+    title: 'Warman Challenge',
+    description: 'Designed and built a complete mechatronic system from scratch for autonomous payload retrieval, transport, and precision drop-off. Engineered the full mechanism from a blank slate through iterative CAD prototyping and design–build–test cycles to optimise reliability and cycle time.',
+    imgSrc: '/images/project-warman.png',
+  },
+  {
     genre: 'Structural Design · CAD',
-    title: 'Towers in the Wind',
-    description: 'Engineered a robust, weather-resistant tower structure under strict material constraints, utilising CAD software, 3D modelling, iterative prototyping, and structural design techniques to maximise strength and performance using cardboard-based materials.',
+    title: 'Stationary Tower System',
+    description: 'Produced a robust, energy-efficient tower structure designed to withstand high wind speeds, mass deposits, and large applied loads. Sized members against the design case in CAD, fabricated to drawing, then assembled and validated on site.',
     imgSrc: '/images/project-towers.png',
+  },
+  {
+    genre: 'Machining · Fabrication · Electronics',
+    title: 'Brushless DC Motor & Metal Tools',
+    description: 'Manufactured a brushless DC motor and a set of metal tools, covering machining, fabrication, and electronic assembly end to end. Milled and turned components to drawing, welded and formed stock into tool bodies and motor housing, then soldered the drive circuitry and commissioned the motor.',
+    imgSrc: '/images/project-motor.png',
+  },
+  {
+    genre: 'CAD · Manufacturing',
+    title: 'Milk Bottle Cap Manufacturing',
+    description: 'Designed a reusable, leak-proof bottle cap for injection moulding, with a silicone seal manufactured to suit. Modelled the cap, thread, and seal in Fusion 360 and SolidWorks; designed the mould for manufacturability; produced the compliant seal and tested the closure for leaks and reuse.',
+    imgSrc: '/images/project-cap.png',
   },
 ];
 
