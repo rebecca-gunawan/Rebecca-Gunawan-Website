@@ -38,6 +38,9 @@ export default function IconTrail({ pauseSelector }) {
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
+    // Skip on touch/mobile — mousemove doesn't fire and cursor effects look broken
+    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
     const layer = document.createElement('div');
     layer.style.cssText = 'position:fixed;inset:0;pointer-events:none;z-index:60;overflow:hidden;';
     document.body.appendChild(layer);
